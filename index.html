@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <title>{$maccms.site_name}</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimal-ui,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="renderer" content="webkit">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta name="keywords"
+    content="{$maccms.site_keywords}">
+<meta name="description"
+    content="{$maccms.site_description}">
+<!-- Styles -->
+    {include file="public/include"}
+    
+
+
+            <link href="/template/maomi/css/home.css" rel="stylesheet">
+    </head>
+
+<body>
+{include file="public/head"}
+        <div class="main-content">
+
+
+
+
+
+
+<p style="margin-top: 15px;text-align:center;">
+        <br>
+         <b style="font-size:17px">👏👏👏&nbsp;第一时间更新全网最新最全资源
+		</b>
+        <br>
+        
+         <b style="font-size:17px">💬💬💬&nbsp;官方客服联系：
+          <a href="https://t.me/Iangou"  target="blank">👉点击前往@Iangou</a>
+		</b>
+        <br>
+        <b style="font-size:17px">📘📘📘&nbsp;本站使用优化回国线路加速视频播放，优化您的看片体验
+		</b>
+        <br>
+		        <b style="font-size:17px">😜😜😜&nbsp;整站已关闭付费，资源免费观看
+		</b><br>
+		<b style="font-size:17px">⚠️⚠️⚠️&nbsp;本站永久域名
+<span><a href="//saodouyin.com"  target="_blank"> saodouyin.com </a></span>
+
+		</p>
+		
+
+
+
+            <main class="container" id="main-container">
+            <div class="vip-video">
+                <div class="video-box ">
+                    <link href="/template/maomi/css/more-bar.css" rel="stylesheet">
+<div class="more-bar">
+    <h3 class="m-0">视频推荐</h3>
+    <div class="more_box">
+     
+    </div>
+</div>
+                                            <link href="/template/maomi/css/video-vip-list.css" rel="stylesheet">
+<div class="video-vip-list-content">
+            <div class="flex-box video-vip-list">
+            <div class="flex-box-left">
+                                <div class="content-item">
+								 {maccms:vod num="1" type="all" order="desc" by="hits"}
+                    <a class="video-pic loading" href="{:mac_url_vod_play($vo)}"
+                        title="{$vo.vod_name}" target="_blank"  style="background-image:url(\{:mac_url_img($vo.vod_pic)})">
+                        <img class="content-img lazy"
+                            data-original="{:mac_url_img($vo.vod_pic)}" data-prefix=""
+                            data-aes="true" data-loading="{:mac_url_img($vo.vod_pic)}">
+                        <span class="player"><img src="/template/maomi/img/play.png"></span>
+                        <span class="note text-bg-r">
+                           {$vo.vod_time|date='m-d',###}
+                        </span>
+                        <span class="note vip-tip">{$vo.type.type_name}</span>
+                    </a>
+                    <div class="title">
+                        <h5 class="video-title"><a href="{:mac_url_vod_play($vo)}"
+                                title="{$vo.vod_name}" target="_blank">
+                                {$vo.vod_name}
+                            </a>
+                        </h5>
+                    </div>
+					 {/maccms:vod}
+                </div>
+            </div>
+            <div class="flex-box-right">
+			 {maccms:vod num="6" type="all" order="desc" by="hits_day"}
+			
+                                                                       <div class="content-item" data-index="2">
+                            <a class="video-pic loading" href="{:mac_url_vod_play($vo)}"
+                                title="{$vo.vod_name}" target="_blank"  style="background-image:url(\{:mac_url_img($vo.vod_pic)})">
+                                <img class="content-img lazy"
+                                    data-original="{:mac_url_img($vo.vod_pic)}" data-prefix=""
+                                    data-aes="true" data-loading="{:mac_url_img($vo.vod_pic)}">
+                                <span class="player"><img
+                                        src="/template/maomi/img/play.png"></span>
+                                <span class="note text-bg-r">
+                                    {$vo.vod_time|date='m-d',###}
+                                </span>
+                                <span class="note vip-tip">{$vo.type.type_name}</span>
+                            </a>
+                            <div class="title">
+                                <h5 class="video-title"><a href="{:mac_url_vod_play($vo)}"
+                                        title=" {$vo.vod_name}" target="_blank">
+                                        {$vo.vod_name}
+                                    </a>
+                                </h5>
+                            </div>
+                        </div>
+                                {/maccms:vod}                                         
+                                                                               
+                                                                                                                                                                                                                                                                                                            </div>
+        </div>
+    
+</div>
+                                    </div>
+            </div>
+			
+			{maccms:type ids="58,36,24,31,33,56" order="asc" by="sort" id="vo1" key="key1"}
+            <div class="recommend-video">
+                <div class="video-box">
+                    <link href="/template/maomi/css/more-bar.css" rel="stylesheet">
+<div class="more-bar">
+    <h3 class="m-0"> {$vo1.type_name}</h3>
+    <div class="more_box">
+        <a class="more_url" href="{:mac_url_type($vo1)}">更多></a>
+    </div>
+</div>
+                                            <link href="/template/maomi/css/video-list.css" rel="stylesheet">
+<ul class="video-list-content">
+   {maccms:vod num="10" type="'.$vo1['type_id'].'" order="desc" by="time"}
+            <li class="content-item ">
+            <a class="video-pic loading"  href="{:mac_url_vod_play($vo)}"
+                title=" {$vo.vod_name}" target="_blank"  style="background-image:url(\{:mac_url_img($vo.vod_pic)})">
+                <img class="content-img lazy" data-original="{:mac_url_img($vo.vod_pic)}" data-prefix=""
+                    data-aes="true" data-loading="{:mac_url_img($vo.vod_pic)}">
+                <span class="player"><img src="/template/maomi/img/play.png" /></span>
+                <span class="note text-bg-r">
+                  {$vo.vod_time|date='m-d',###}
+                </span>
+            </a>
+            <div class="title text-ellipsis">
+                <a href="{:mac_url_vod_play($vo)}"
+                title=" {$vo.vod_name}" target="_blank">
+                 {$vo.vod_name}
+            </a>
+            </div>
+        </li>
+              {/maccms:vod}    
+    </ul>
+                                    </div>
+            </div>
+          {/maccms:type}
+        </main>
+
+        </div>
+{include file="public/foot"}
+    <script type="text/javascript">
+    createTotop();
+    createHeaderAd(0); // 少
+    createContentAd();
+
+    let user = window.checkUser(false);
+    window.showUser(user);
+
+    setAppDownFix();
+</script>
+
+</html>
+
+<style>
+    .main-content {
+        min-height: 700px;
+        overflow: auto;
+    }
+
+
+
+    @media  screen and (max-width:738px) {
+        .main-content {
+            width: 92%;
+            margin: 0 auto;
+            margin-bottom: 80px;
+        }
+
+        .header-fix {
+            /* position: fixed; */
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+        .header-menu{
+            /* margin-top: 50px; */
+        }
+    }
+</style>
